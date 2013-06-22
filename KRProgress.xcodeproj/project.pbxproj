@@ -1,0 +1,341 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EFB57FD1775C913000DE086 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFB57FC1775C913000DE086 /* UIKit.framework */; };
+		8EFB57FF1775C913000DE086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFB57FE1775C913000DE086 /* Foundation.framework */; };
+		8EFB58011775C913000DE086 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFB58001775C913000DE086 /* CoreGraphics.framework */; };
+		8EFB58071775C913000DE086 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB58051775C913000DE086 /* InfoPlist.strings */; };
+		8EFB58091775C913000DE086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB58081775C913000DE086 /* main.m */; };
+		8EFB580D1775C913000DE086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB580C1775C913000DE086 /* AppDelegate.m */; };
+		8EFB580F1775C913000DE086 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB580E1775C913000DE086 /* Default.png */; };
+		8EFB58111775C913000DE086 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB58101775C913000DE086 /* Default@2x.png */; };
+		8EFB58131775C913000DE086 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB58121775C913000DE086 /* Default-568h@2x.png */; };
+		8EFB58161775C913000DE086 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB58151775C913000DE086 /* ViewController.m */; };
+		8EFB58191775C913000DE086 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB58171775C913000DE086 /* ViewController.xib */; };
+		8EFB58231775CA53000DE086 /* KRProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB58221775CA53000DE086 /* KRProgress.m */; };
+		8EFB58281775ECF3000DE086 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFB58271775ECF3000DE086 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8EFB57F91775C913000DE086 /* KRProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EFB57FC1775C913000DE086 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8EFB57FE1775C913000DE086 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8EFB58001775C913000DE086 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8EFB58041775C913000DE086 /* KRProgress-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KRProgress-Info.plist"; sourceTree = "<group>"; };
+		8EFB58061775C913000DE086 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8EFB58081775C913000DE086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8EFB580A1775C913000DE086 /* KRProgress-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KRProgress-Prefix.pch"; sourceTree = "<group>"; };
+		8EFB580B1775C913000DE086 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8EFB580C1775C913000DE086 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8EFB580E1775C913000DE086 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8EFB58101775C913000DE086 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8EFB58121775C913000DE086 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8EFB58141775C913000DE086 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8EFB58151775C913000DE086 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8EFB58181775C913000DE086 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		8EFB58211775CA53000DE086 /* KRProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRProgress.h; sourceTree = "<group>"; };
+		8EFB58221775CA53000DE086 /* KRProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRProgress.m; sourceTree = "<group>"; };
+		8EFB58271775ECF3000DE086 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EFB57F61775C913000DE086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EFB58281775ECF3000DE086 /* QuartzCore.framework in Frameworks */,
+				8EFB57FD1775C913000DE086 /* UIKit.framework in Frameworks */,
+				8EFB57FF1775C913000DE086 /* Foundation.framework in Frameworks */,
+				8EFB58011775C913000DE086 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EFB57F01775C913000DE086 = {
+			isa = PBXGroup;
+			children = (
+				8EFB581F1775CA53000DE086 /* Classes */,
+				8EFB58021775C913000DE086 /* KRProgress */,
+				8EFB58031775C913000DE086 /* Supporting Files */,
+				8EFB57FB1775C913000DE086 /* Frameworks */,
+				8EFB57FA1775C913000DE086 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EFB57FA1775C913000DE086 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB57F91775C913000DE086 /* KRProgress.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EFB57FB1775C913000DE086 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB58241775ECB1000DE086 /* Needs */,
+				8EFB57FC1775C913000DE086 /* UIKit.framework */,
+				8EFB57FE1775C913000DE086 /* Foundation.framework */,
+				8EFB58001775C913000DE086 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EFB58021775C913000DE086 /* KRProgress */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB580B1775C913000DE086 /* AppDelegate.h */,
+				8EFB580C1775C913000DE086 /* AppDelegate.m */,
+				8EFB58141775C913000DE086 /* ViewController.h */,
+				8EFB58151775C913000DE086 /* ViewController.m */,
+				8EFB58171775C913000DE086 /* ViewController.xib */,
+			);
+			path = KRProgress;
+			sourceTree = "<group>";
+		};
+		8EFB58031775C913000DE086 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB58041775C913000DE086 /* KRProgress-Info.plist */,
+				8EFB58051775C913000DE086 /* InfoPlist.strings */,
+				8EFB58081775C913000DE086 /* main.m */,
+				8EFB580A1775C913000DE086 /* KRProgress-Prefix.pch */,
+				8EFB580E1775C913000DE086 /* Default.png */,
+				8EFB58101775C913000DE086 /* Default@2x.png */,
+				8EFB58121775C913000DE086 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			path = KRProgress;
+			sourceTree = "<group>";
+		};
+		8EFB581F1775CA53000DE086 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB58201775CA53000DE086 /* KRProgress */,
+			);
+			name = Classes;
+			path = KRProgress/Classes;
+			sourceTree = "<group>";
+		};
+		8EFB58201775CA53000DE086 /* KRProgress */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB58211775CA53000DE086 /* KRProgress.h */,
+				8EFB58221775CA53000DE086 /* KRProgress.m */,
+			);
+			path = KRProgress;
+			sourceTree = "<group>";
+		};
+		8EFB58241775ECB1000DE086 /* Needs */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB58271775ECF3000DE086 /* QuartzCore.framework */,
+			);
+			name = Needs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EFB57F81775C913000DE086 /* KRProgress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EFB581C1775C913000DE086 /* Build configuration list for PBXNativeTarget "KRProgress" */;
+			buildPhases = (
+				8EFB57F51775C913000DE086 /* Sources */,
+				8EFB57F61775C913000DE086 /* Frameworks */,
+				8EFB57F71775C913000DE086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KRProgress;
+			productName = KRProgress;
+			productReference = 8EFB57F91775C913000DE086 /* KRProgress.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EFB57F11775C913000DE086 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Kuo-Ming Lin";
+			};
+			buildConfigurationList = 8EFB57F41775C913000DE086 /* Build configuration list for PBXProject "KRProgress" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8EFB57F01775C913000DE086;
+			productRefGroup = 8EFB57FA1775C913000DE086 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EFB57F81775C913000DE086 /* KRProgress */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EFB57F71775C913000DE086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EFB58071775C913000DE086 /* InfoPlist.strings in Resources */,
+				8EFB580F1775C913000DE086 /* Default.png in Resources */,
+				8EFB58111775C913000DE086 /* Default@2x.png in Resources */,
+				8EFB58131775C913000DE086 /* Default-568h@2x.png in Resources */,
+				8EFB58191775C913000DE086 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EFB57F51775C913000DE086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EFB58091775C913000DE086 /* main.m in Sources */,
+				8EFB580D1775C913000DE086 /* AppDelegate.m in Sources */,
+				8EFB58161775C913000DE086 /* ViewController.m in Sources */,
+				8EFB58231775CA53000DE086 /* KRProgress.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8EFB58051775C913000DE086 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EFB58061775C913000DE086 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8EFB58171775C913000DE086 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EFB58181775C913000DE086 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8EFB581A1775C913000DE086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8EFB581B1775C913000DE086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EFB581D1775C913000DE086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KRProgress/KRProgress-Prefix.pch";
+				INFOPLIST_FILE = "KRProgress/KRProgress-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8EFB581E1775C913000DE086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KRProgress/KRProgress-Prefix.pch";
+				INFOPLIST_FILE = "KRProgress/KRProgress-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EFB57F41775C913000DE086 /* Build configuration list for PBXProject "KRProgress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EFB581A1775C913000DE086 /* Debug */,
+				8EFB581B1775C913000DE086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EFB581C1775C913000DE086 /* Build configuration list for PBXNativeTarget "KRProgress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EFB581D1775C913000DE086 /* Debug */,
+				8EFB581E1775C913000DE086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8EFB57F11775C913000DE086 /* Project object */;
+}

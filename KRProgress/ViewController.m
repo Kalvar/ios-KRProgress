@@ -1,18 +1,12 @@
-## Screen Shot
+//
+//  ViewController.m
+//  KRProgress
+//
+//  Created by Kalvar on 13/6/22.
+//  Copyright (c) 2013年 Kuo-Ming Lin. All rights reserved.
+//
 
-<img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-1.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
-。
-<img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-2.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
-
-## Supports
-
-KRProgress supports ARC.
-
-## How To Get Started
-
-When you need to show the waiting information on the view to show that you can easy using KRProgress to reach your goal. And you need to add the " QuartzCore.framework " in the projects.
-
-``` objective-c
+#import "ViewController.h"
 #import "KRProgress.h"
 
 @interface ViewController ()
@@ -28,7 +22,13 @@ When you need to show the waiting information on the view to show that you can e
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _krProgress = [[KRProgress alloc] init];
+	_krProgress = [[KRProgress alloc] init];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
 }
 
 #pragma --mark Normal IBActions
@@ -130,12 +130,5 @@ When you need to show the waiting information on the view to show that you can e
         }
     }];
 }
-```
 
-## Version
-
-V1.0.
-
-## License
-
-MIT.
+@end
