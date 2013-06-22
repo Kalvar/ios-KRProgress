@@ -10,7 +10,9 @@ KRProgress supports ARC.
 
 ## How To Get Started
 
-When you need to show the waiting information on the view that you can easy using KRProgress to reach your goal. And you need to add the " QuartzCore.framework " in the projects first.
+When you need to show the waiting information ( the loading indicator ) on the view that you can easy using KRProgress to reach your goal. And you need to add the " QuartzCore.framework " in the projects first.
+
+KRProgress can easy using Block to do something after started, and it will automatically stop ( close ) the loading indicator.
 
 ``` objective-c
 #import "KRProgress.h"
