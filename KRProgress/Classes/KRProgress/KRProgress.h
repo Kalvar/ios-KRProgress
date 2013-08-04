@@ -1,6 +1,6 @@
 //
 //  KRProgress.h
-//  V1.0
+//  V1.1
 //
 //  Created by Kuo-Ming Lin on 13/6/22.
 //  Copyright (c) 2013年 Kuo-Ming Lin. All rights reserved.
@@ -39,6 +39,7 @@
 -(void)startWithView:(UIView *)_theView activityColor:(UIColor *)_activityColor showAtCenterPoints:(CGPoint)_centerPoints;
 -(void)startTranslucentWithView:(UIView *)_theView;
 -(void)startCornerTranslucentWithView:(UIView *)_theView;
+-(void)startCornerTranslucentWithView:(UIView *)_theView tipText:(NSString *)_tipText lockWindow:(BOOL)_isLockWindow;
 -(void)startTranslucentWithView:(UIView *)_theView setTipText:(NSString *)_tipText;
 -(void)startTranslucentInBackgroundWithView:(UIView *)_theView;
 -(void)startWithView:(UIView *)_theView executionHandler:( void (^)(void) )_ececutionHandler;
@@ -50,6 +51,7 @@
  */
 -(void)stopActivitingView:(UIView *)_theView;
 -(void)stopTranslucentFromActivitingView:(UIView *)_theView;
+-(void)stopCornerTranslucentFromActivitingView:(UIView *)_theView;
 -(void)stopTranslucentInBackgroundFromView:(UIView *)_theView;
 -(void)stopTranslucentAndRemoveTipTextFromView:(UIView *)_theView;
 -(void)directChangeTipText:(NSString *)_tipText withActivitingView:(UIView *)_theView;

@@ -66,11 +66,13 @@
 -(IBAction)startTranslucentCornerMode:(id)sender
 {
     [self._krProgress startCornerTranslucentWithView:self.view];
+    //[self._krProgress startCornerTranslucentWithView:self.view tipText:@"100.0 %" lockWindow:YES];
 }
 
 -(IBAction)stopTranslucentCornerMode:(id)sender
 {
     [self._krProgress stopTranslucentFromActivitingView:self.view];
+    //[self._krProgress stopCornerTranslucentFromActivitingView:self.view];
 }
 
 #pragma --mark Banner Mode IBActions

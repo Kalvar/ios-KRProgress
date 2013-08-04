@@ -1,6 +1,6 @@
 //
 //  KRProgress.m
-//  V1.0
+//  V1.1
 //
 //  Created by Kuo-Ming Lin on 13/6/22.
 //  Copyright (c) 2013年 Kuo-Ming Lin. All rights reserved.
@@ -11,6 +11,7 @@
 
 static NSInteger _krProgressTipLabelTag               = 8881;
 static NSInteger _krProgressActivityBackgroundViewTag = 8882;
+static NSInteger _krProgressLockBackgroundViewTag     = 8883;
 
 @interface KRProgress ()
 {
@@ -187,7 +188,9 @@ static NSInteger _krProgressActivityBackgroundViewTag = 8882;
         dispatch_async(queue, ^(void){
             if( self._activityIndicator.superview == self._activityAlertView )
             {
-                [self._activityIndicator removeFromSuperview];
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    [self._activityIndicator removeFromSuperview];
+                });
             }
             if( _title )
             {
@@ -197,8 +200,9 @@ static NSInteger _krProgressActivityBackgroundViewTag = 8882;
             self._activityIndicator.center = CGPointMake(self._activityAlertView.bounds.size.width / 2.0f,
                                                          self._activityAlertView.bounds.size.height - 40.0f);
             [self._activityIndicator startAnimating];
-            [self._activityAlertView addSubview:self._activityIndicator];
-            //dispatch_async(dispatch_get_main_queue(), ^(void) {});
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [self._activityAlertView addSubview:self._activityIndicator];
+            });
         });
     }
 }
@@ -305,6 +309,70 @@ static NSInteger _krProgressActivityBackgroundViewTag = 8882;
     [self startWithView:_theView];
 }
 
+-(void)startCornerTranslucentWithView:(UIView *)_theView tipText:(NSString *)_tipText lockWindow:(BOOL)_isLockWindow
+{
+    if( _isLockWindow )
+    {
+        UIView *_backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                           0.0f,
+                                                                           _theView.frame.size.width,
+                                                                           _theView.frame.size.height)];
+        [_backgroundView setTag:_krProgressLockBackgroundViewTag];
+        [_backgroundView setBackgroundColor:[UIColor clearColor]];
+        [_theView addSubview:_backgroundView];
+    }
+        
+    CGFloat _width  = self._activityIndicator.frame.size.width + 60.0f;
+    CGFloat _height = self._activityIndicator.frame.size.height + 60.0f;
+    UIView *_backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                       0.0f,
+                                                                       _width,
+                                                                       _height)];
+    [_backgroundView setTag:_krProgressActivityBackgroundViewTag];
+    [_backgroundView setCenter:CGPointMake(_theView.bounds.size.width / 2, _theView.bounds.size.height / 2.0f)];
+    [_backgroundView setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.7f]];
+    [self _setupCornerBorderWithView:_backgroundView];
+    [_theView addSubview:_backgroundView];
+    if( !self.activityStyle )
+    {
+        self.activityStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    }
+    UIActivityIndicatorView *_activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:self.activityStyle];
+    _activityIndicatorView.center = CGPointMake(_theView.bounds.size.width / 2.0f,
+                                                _theView.bounds.size.height / 2.0f - 15.0f);
+    [_activityIndicatorView setColor:[UIColor whiteColor]];
+    [_activityIndicatorView startAnimating];
+    [_theView addSubview:_activityIndicatorView];
+    if( !_tipText )
+    {
+        _tipText = @"";
+    }
+    UIColor *_textColor = nil;
+    if( self.tipColor )
+    {
+        _textColor = self.tipColor;
+    }
+    else
+    {
+        _textColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+    }
+    //Large 的 Loading Icon 是 37 x 37
+    CGRect _viewframe    = _theView.frame;
+    CGFloat _labelHeight = 26.0f;
+    CGFloat _offset      = 15.0f;
+    UILabel *_tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(( _viewframe.size.width / 2.0f ) - ( _viewframe.size.width / 2.0f ),
+                                                                   ( _viewframe.size.height / 2.0f ) - ( _labelHeight / 2.0f ) + _offset,
+                                                                   _viewframe.size.width,
+                                                                   _labelHeight)];
+    [_tipLabel setTag:_krProgressTipLabelTag];
+    [_tipLabel setBackgroundColor:[UIColor clearColor]];
+    [_tipLabel setText:_tipText];
+    [_tipLabel setTextColor:_textColor];
+    [_tipLabel setTextAlignment:NSTextAlignmentCenter];
+    [_tipLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
+    [_theView addSubview:_tipLabel];
+}
+
 -(void)startTranslucentWithView:(UIView *)_theView setTipText:(NSString *)_tipText
 {
     self.tipText = _tipText;
@@ -384,6 +452,23 @@ static NSInteger _krProgressActivityBackgroundViewTag = 8882;
     if( [_theView viewWithTag:_krProgressActivityBackgroundViewTag] )
     {
         [[_theView viewWithTag:_krProgressActivityBackgroundViewTag] removeFromSuperview];
+    }
+}
+
+-(void)stopCornerTranslucentFromActivitingView:(UIView *)_theView
+{
+    if( _theView )
+    {
+        UILabel *_tipTextLabel = (UILabel *)[_theView viewWithTag:_krProgressTipLabelTag];
+        if( _tipTextLabel )
+        {
+            [_tipTextLabel removeFromSuperview];
+        }
+        if( [_theView viewWithTag:_krProgressLockBackgroundViewTag] )
+        {
+            [[_theView viewWithTag:_krProgressLockBackgroundViewTag] removeFromSuperview];
+        }
+        [self stopTranslucentFromActivitingView:_theView];
     }
 }
 
