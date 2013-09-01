@@ -23,6 +23,7 @@
 {
     [super viewDidLoad];
 	_krProgress = [[KRProgress alloc] init];
+    //_krProgress.borderColor = [UIColor colorWithRed:1.0f/255.0f green:1.0f/255.0f blue:1.0f/255.0f alpha:0.85f];
 }
 
 - (void)didReceiveMemoryWarning

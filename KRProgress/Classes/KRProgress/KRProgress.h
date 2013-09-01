@@ -15,6 +15,7 @@
     NSString *tipText;
     UIColor *tipColor;
     NSString *uniformReminderText;
+    UIColor *borderColor;
 }
 
 @property (nonatomic, strong) UIView *view;
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) NSString *tipText;
 @property (nonatomic, strong) UIColor *tipColor;
 @property (nonatomic, strong) NSString *uniformReminderText;
+@property (nonatomic, strong) UIColor *borderColor;
 
 
 +(KRProgress *)sharedManager;

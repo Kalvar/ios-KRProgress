@@ -44,6 +44,7 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8884;
     self.activityStyle       = UIActivityIndicatorViewStyleWhite;
     self.tipText             = @"Updating Data";
     self.uniformReminderText = @"Loading";
+    self.borderColor         = [UIColor colorWithRed:1.0f/255.0f green:1.0f/255.0f blue:1.0f/255.0f alpha:0.85f];
 }
 
 #pragma --mark Removes
@@ -113,8 +114,8 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8884;
 
 -(void)_setupCornerBorderWithView:(UIView *)_theView
 {
-    CALayer *_viewLayer = [_theView layer];
-    _viewLayer.borderColor   = [[UIColor colorWithRed:1.0f/255.0f green:1.0f/255.0f blue:1.0f/255.0f alpha:0.85f] CGColor];
+    CALayer *_viewLayer      = [_theView layer];
+    _viewLayer.borderColor   = [self.borderColor CGColor];
     _viewLayer.borderWidth   = 2.0f;
     _viewLayer.shadowColor   = [[UIColor blackColor] CGColor];
     _viewLayer.shadowOffset  = CGSizeMake(0, 0);
@@ -133,6 +134,7 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8884;
 @synthesize tipText             = _theTipText;
 @synthesize uniformReminderText = _uniformReminderText;
 @synthesize tipColor            = _tipColor;
+@synthesize borderColor         = _borderColor;
 @synthesize _activityView, _activityIndicator, _activityAlertView;
 
 
