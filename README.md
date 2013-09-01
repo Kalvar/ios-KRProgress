@@ -1,10 +1,15 @@
 ## Screen Shot
 
 //Figure 1.
+<br />
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-1.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
+<br />
 //Figure 2.
+<br />
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-2.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
+<br />
 //Figure 2.
+<br />
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-3.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
 
 ## Supports
