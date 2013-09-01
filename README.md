@@ -1,14 +1,14 @@
 ## Screen Shot
 
-//Figure 1.
+@Figure 1. Mode 1 style.
 <br />
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-1.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
 <br />
-//Figure 2.
+@Figure 2. Mode 3 style.
 <br />
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-2.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
 <br />
-//Figure 2.
+@Figure 3. Mode 4 style.
 <br />
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-3.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
 
