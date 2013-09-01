@@ -1,6 +1,6 @@
 //
 //  KRProgress.m
-//  V1.1
+//  V1.2
 //
 //  Created by Kuo-Ming Lin on 13/6/22.
 //  Copyright (c) 2013年 Kuo-Ming Lin. All rights reserved.
@@ -10,8 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger _krProgressTipLabelTag               = 8881;
-static NSInteger _krProgressActivityBackgroundViewTag = 8882;
-static NSInteger _krProgressLockBackgroundViewTag     = 8883;
+static NSInteger _krProgressUniformTitleLabelTag      = 8882;
+static NSInteger _krProgressActivityBackgroundViewTag = 8883;
+static NSInteger _krProgressLockBackgroundViewTag     = 8884;
 
 @interface KRProgress ()
 {
@@ -39,9 +40,10 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8883;
 
 -(void)_initWithVars
 {
-    self.view          = nil;
-    self.activityStyle = UIActivityIndicatorViewStyleWhite;
-    self.tipText       = @"Loading";
+    self.view                = nil;
+    self.activityStyle       = UIActivityIndicatorViewStyleWhite;
+    self.tipText             = @"Updating Data";
+    self.uniformReminderText = @"Loading";
 }
 
 #pragma --mark Removes
@@ -126,10 +128,11 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8883;
 
 @implementation KRProgress
 
-@synthesize view = _view;
-@synthesize activityStyle = _activityStyle;
-@synthesize tipText;
-@synthesize tipColor = _tipColor;
+@synthesize view                = _view;
+@synthesize activityStyle       = _activityStyle;
+@synthesize tipText             = _theTipText;
+@synthesize uniformReminderText = _uniformReminderText;
+@synthesize tipColor            = _tipColor;
 @synthesize _activityView, _activityIndicator, _activityAlertView;
 
 
@@ -322,8 +325,8 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8883;
         [_theView addSubview:_backgroundView];
     }
         
-    CGFloat _width  = self._activityIndicator.frame.size.width + 60.0f;
-    CGFloat _height = self._activityIndicator.frame.size.height + 60.0f;
+    CGFloat _width  = self._activityIndicator.frame.size.width + 100.0f;
+    CGFloat _height = self._activityIndicator.frame.size.height + 100.0f;
     UIView *_backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
                                                                        0.0f,
                                                                        _width,
@@ -358,8 +361,23 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8883;
     }
     //Large 的 Loading Icon 是 37 x 37
     CGRect _viewframe    = _theView.frame;
-    CGFloat _labelHeight = 26.0f;
-    CGFloat _offset      = 15.0f;
+    CGFloat _titleHeight = _activityIndicatorView.frame.size.height; //26.0f;
+    CGFloat _titleOffset = 15.0f;
+    //讀取的制式文字
+    UILabel *_uniformTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(( _viewframe.size.width / 2.0f ) - ( _viewframe.size.width / 2.0f ),
+                                                                            ( _viewframe.size.height / 2.0f ) - ( _titleHeight / 2.0f ) + _titleOffset,
+                                                                            _viewframe.size.width,
+                                                                            _titleHeight)];
+    [_uniformTitleLabel setTag:_krProgressUniformTitleLabelTag];
+    [_uniformTitleLabel setBackgroundColor:[UIColor clearColor]];
+    [_uniformTitleLabel setText:self.uniformReminderText];
+    [_uniformTitleLabel setTextColor:_textColor];
+    [_uniformTitleLabel setTextAlignment:NSTextAlignmentCenter];
+    [_uniformTitleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
+    [_theView addSubview:_uniformTitleLabel];
+    //動態提示小文字
+    CGFloat _labelHeight = _activityIndicatorView.frame.size.height; //26.0f;
+    CGFloat _offset      = 20.0f + _titleOffset;
     UILabel *_tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(( _viewframe.size.width / 2.0f ) - ( _viewframe.size.width / 2.0f ),
                                                                    ( _viewframe.size.height / 2.0f ) - ( _labelHeight / 2.0f ) + _offset,
                                                                    _viewframe.size.width,
@@ -369,7 +387,7 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8883;
     [_tipLabel setText:_tipText];
     [_tipLabel setTextColor:_textColor];
     [_tipLabel setTextAlignment:NSTextAlignmentCenter];
-    [_tipLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
+    [_tipLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
     [_theView addSubview:_tipLabel];
 }
 
@@ -463,6 +481,11 @@ static NSInteger _krProgressLockBackgroundViewTag     = 8883;
         if( _tipTextLabel )
         {
             [_tipTextLabel removeFromSuperview];
+        }
+        UILabel *_uniformTextLabel = (UILabel *)[_theView viewWithTag:_krProgressUniformTitleLabelTag];
+        if( _uniformTextLabel )
+        {
+            [_uniformTextLabel removeFromSuperview];
         }
         if( [_theView viewWithTag:_krProgressLockBackgroundViewTag] )
         {

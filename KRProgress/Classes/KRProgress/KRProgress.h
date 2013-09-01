@@ -1,6 +1,6 @@
 //
 //  KRProgress.h
-//  V1.1
+//  V1.2
 //
 //  Created by Kuo-Ming Lin on 13/6/22.
 //  Copyright (c) 2013年 Kuo-Ming Lin. All rights reserved.
@@ -14,13 +14,14 @@
     UIActivityIndicatorViewStyle activityStyle;
     NSString *tipText;
     UIColor *tipColor;
+    NSString *uniformReminderText;
 }
 
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, assign) UIActivityIndicatorViewStyle activityStyle;
 @property (nonatomic, strong) NSString *tipText;
 @property (nonatomic, strong) UIColor *tipColor;
-
+@property (nonatomic, strong) NSString *uniformReminderText;
 
 
 +(KRProgress *)sharedManager;

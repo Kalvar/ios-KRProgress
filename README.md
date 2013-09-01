@@ -1,8 +1,11 @@
 ## Screen Shot
 
+//Figure 1.
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-1.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
-。
+//Figure 2.
 <img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-2.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
+//Figure 2.
+<img src="https://dl.dropbox.com/u/83663874/GitHubs/KRProgress-3.png" alt="KRProgress" title="KRProgress" style="margin: 20px;" class="center" />
 
 ## Supports
 
@@ -68,12 +71,30 @@ KRProgress can easy using Block to do something after started, and it will autom
 
 -(IBAction)startTranslucentCornerMode:(id)sender
 {
-    [self._krProgress startCornerTranslucentWithView:self.view];
+    self._krProgress.activityStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    //[self._krProgress startCornerTranslucentWithView:self.view];
+    [self._krProgress startCornerTranslucentWithView:self.view tipText:@"100.0 %" lockWindow:YES];
 }
 
 -(IBAction)stopTranslucentCornerMode:(id)sender
 {
-    [self._krProgress stopTranslucentFromActivitingView:self.view];
+    //[self._krProgress stopTranslucentFromActivitingView:self.view];
+    [self._krProgress stopCornerTranslucentFromActivitingView:self.view];
+}
+
+-(void)theCustomActivityStyleWithFigure3
+{
+    //If you wanna show the style of Figure 3 that you can follow this method.
+    [self._krProgress startCornerTranslucentWithView:[[UIApplication sharedApplication] keyWindow]
+                                             tipText:[NSString stringWithFormat:@"%.2f%%", 50.0f]
+                                          lockWindow:YES];
+    
+    //If you wanna dynamic changing the tip text that you can do this.
+    [self._krProgress directChangeTipText:[NSString stringWithFormat:@"%.2f%%", 100.0f]
+                       withActivitingView:[[UIApplication sharedApplication] keyWindow]];
+    
+    //If you wanna stop it.
+    [self._krProgress stopCornerTranslucentFromActivitingView:[[UIApplication sharedApplication] keyWindow]];
 }
 
 #pragma --mark Banner Mode IBActions
@@ -106,12 +127,6 @@ KRProgress can easy using Block to do something after started, and it will autom
             NSLog(@"startTranslucentBlock : %i", i);
         }
     }];
-    
-    /*
-    [self._krProgress startTranslucentWithView:self.view setTipText:@"Test Loading with Block" executionHandler:^{
-        //...
-    }];
-     */
 }
 
 -(IBAction)startBannerBlock:(id)sender
@@ -137,7 +152,7 @@ KRProgress can easy using Block to do something after started, and it will autom
 
 ## Version
 
-V1.0.
+V1.2.
 
 ## License
 

@@ -65,14 +65,30 @@
 
 -(IBAction)startTranslucentCornerMode:(id)sender
 {
-    [self._krProgress startCornerTranslucentWithView:self.view];
-    //[self._krProgress startCornerTranslucentWithView:self.view tipText:@"100.0 %" lockWindow:YES];
+    self._krProgress.activityStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    //[self._krProgress startCornerTranslucentWithView:self.view];
+    [self._krProgress startCornerTranslucentWithView:self.view tipText:@"100.0 %" lockWindow:YES];
 }
 
 -(IBAction)stopTranslucentCornerMode:(id)sender
 {
-    [self._krProgress stopTranslucentFromActivitingView:self.view];
-    //[self._krProgress stopCornerTranslucentFromActivitingView:self.view];
+    //[self._krProgress stopTranslucentFromActivitingView:self.view];
+    [self._krProgress stopCornerTranslucentFromActivitingView:self.view];
+}
+
+-(void)theCustomActivityStyleWithFigure3
+{
+    //If you wanna show the style of Figure 3 that you can follow this method.
+    [self._krProgress startCornerTranslucentWithView:[[UIApplication sharedApplication] keyWindow]
+                                             tipText:[NSString stringWithFormat:@"%.2f%%", 50.0f]
+                                          lockWindow:YES];
+    
+    //If you wanna dynamic changing the tip text that you can do this.
+    [self._krProgress directChangeTipText:[NSString stringWithFormat:@"%.2f%%", 100.0f]
+                       withActivitingView:[[UIApplication sharedApplication] keyWindow]];
+    
+    //If you wanna stop it.
+    [self._krProgress stopCornerTranslucentFromActivitingView:[[UIApplication sharedApplication] keyWindow]];
 }
 
 #pragma --mark Banner Mode IBActions
